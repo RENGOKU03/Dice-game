@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Selectbutton from "./Selectbutton";
 import RulesDiv from "./RulesDiv";
-import { MdPlayArrow } from "react-icons/md";
 
 const Game = () => {
   const dices = [1, 2, 3, 4, 5, 6];
@@ -14,18 +13,15 @@ const Game = () => {
       document.getElementById("error_msg").classList.remove("hidden");
     } else {
       setDiceValue(Math.floor(Math.random() * 6) + 1);
+      setPlayerChoice(undefined);
       totalScoreDice();
     }
   };
   const handelSelectDice = (dice) => {
     const newChoice = dice;
-
-    const element = document.getElementById(dice);
-    element.classList.toggle("bg-blue-500");
     setPlayerChoice(newChoice);
   };
   const totalScoreDice = () => {
-    console.log(diceValue, playerChoice);
     if (diceValue === playerChoice) {
       setTotalScore(totalScore + diceValue);
     } else {
@@ -54,6 +50,7 @@ const Game = () => {
                   id={dice}
                   key={index}
                   handelSelectDice={handelSelectDice}
+                  isActive={playerChoice === dice}
                 />
               ))}
             </div>

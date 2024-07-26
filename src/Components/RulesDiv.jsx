@@ -6,7 +6,7 @@ const RulesDiv = ({ setShowRules }) => {
     setShowRules(false);
   };
   return (
-    <div className="absolute top-1/3 left-1/4 p-5 w-1/2 bg-[#48E1D5] rounded-3xl">
+    <div className="absolute top-1/3 left-1/4 p-5 w-1/2 bg-[#FBF1F1] rounded-3xl">
       <div className="flex justify-between mr-2">
         <h1 className="text-xl font-medium mb-3">How to play Game</h1>
         <button
